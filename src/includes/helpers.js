@@ -22,22 +22,20 @@ const kmToMiles = (km) => {
  * @returns {number}
  */
 const yenToUsd = (yen) => {
-    const exchangeRate = 0.0066; // fixed example rate
+    const exchangeRate = 0.0066; // 1 Yen = 0.0066 USD
     return yen * exchangeRate;
 };
 
 /**
- * Converts a month number (1–12) to a three-letter abbreviation.
+ * Converts a month number (1–12) into a three-letter abbreviation.
  * @param {number} month
  * @returns {string}
  */
 const monthNumberToAbbrev = (month) => {
     const months = [
-        'Jan', 'Feb', 'Mar', 'Apr',
-        'May', 'Jun', 'Jul', 'Aug',
-        'Sep', 'Oct', 'Nov', 'Dec'
+        'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+        'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'
     ];
-
     return months[month - 1] || '';
 };
 
