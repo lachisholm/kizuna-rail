@@ -1,6 +1,6 @@
 /**
- * Generates a unique Japan Rail like confirmation code for bookings.
- * @returns {string} A unique confirmation code.
+ * Generates a unique Japan Rail–like confirmation code for bookings.
+ * @returns {string}
  */
 const generateConfirmationCode = () => {
     return 'JR' + Math.random().toString(36).substring(2, 10).toUpperCase();
@@ -8,8 +8,8 @@ const generateConfirmationCode = () => {
 
 /**
  * Converts kilometers to miles.
- * @param {number} km - The distance in kilometers.
- * @returns {number} The equivalent distance in miles.
+ * @param {number} km
+ * @returns {number}
  */
 const kmToMiles = (km) => {
     const conversionFactor = 0.621371;
@@ -18,12 +18,32 @@ const kmToMiles = (km) => {
 
 /**
  * Converts Japanese Yen to US Dollars.
- * @param {number} yen - The amount in Japanese Yen.
- * @returns {number} The equivalent amount in US Dollars.
+ * @param {number} yen
+ * @returns {number}
  */
 const yenToUsd = (yen) => {
-    const exchangeRate = 0.0066; // Example rate: 1 Yen = 0.0066 USD
+    const exchangeRate = 0.0066; // fixed example rate
     return yen * exchangeRate;
 };
 
-export { generateConfirmationCode, kmToMiles, yenToUsd };
+/**
+ * Converts a month number (1–12) to a three-letter abbreviation.
+ * @param {number} month
+ * @returns {string}
+ */
+const monthNumberToAbbrev = (month) => {
+    const months = [
+        'Jan', 'Feb', 'Mar', 'Apr',
+        'May', 'Jun', 'Jul', 'Aug',
+        'Sep', 'Oct', 'Nov', 'Dec'
+    ];
+
+    return months[month - 1] || '';
+};
+
+export {
+    generateConfirmationCode,
+    kmToMiles,
+    yenToUsd,
+    monthNumberToAbbrev
+};
